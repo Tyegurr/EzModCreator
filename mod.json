@@ -1,0 +1,23 @@
+{
+	"geode": "4.5.0",
+	"gd": {
+		"win": "2.2074",
+		"android": "2.2074",
+		"mac": "2.2074",
+		"ios": "2.2074"
+	},
+	"id": "tyegurr.ezmodcreator",
+	"name": "Ez Mod Creator",
+	"version": "v1.0.0",
+	"developer": "Tyegurr",
+	"description": "Make mods easily, all in GD!",
+	"tags": ["enhancement", "customization", "gameplay"],
+	"resources": {
+		"spritesheets": {
+			"res": ["res/img/*.png"]
+		}
+	},
+	"dependencies": {
+		"geode.node-ids": ">=v1.20.0"
+	}
+}
