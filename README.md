@@ -1,3 +1,5 @@
+# UNFINISHED! LIKE 3.14159% DONE!
+
 # EZ! Mod Creator
 A mod that lets you make mods in GD using a simple block language.
 
