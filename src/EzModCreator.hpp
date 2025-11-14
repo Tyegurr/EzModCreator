@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ui/ModListLayer.h"
+#include "ui/ModListPopup.h"
 
 class EzModCreator {
 private:
@@ -8,7 +8,7 @@ private:
     EzModCreator() {}
 
     bool _modListLayerOpen = false;
-    ModListLayer* _modListLayer;
+    ModListPopup* _modListPopup;
 public:
 
     EzModCreator(const EzModCreator& obj) = delete;

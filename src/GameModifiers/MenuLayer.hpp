@@ -29,4 +29,4 @@ class $modify(ModdedMenuLayer, MenuLayer) {
     {
         EzModCreator::get()->OpenModListLayer();
     }
-};
+}; // ok but how do i detect if it's about to be destroyed or we're leaving the menu..
