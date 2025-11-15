@@ -5,6 +5,10 @@ bool ModCreationLabLayer::init() {
 
     _labTopBar = LabTopBar::create();
     this->addChild(_labTopBar);
+    _blockSelectorPanel = BlockSelectorPanel::create();
+    this->addChild(_blockSelectorPanel);
+    _blockCodeViewport = BlockCodeViewport::create();
+    this->addChild(_blockCodeViewport);
 
     return true;
 }

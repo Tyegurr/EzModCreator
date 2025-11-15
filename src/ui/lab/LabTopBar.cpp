@@ -22,6 +22,51 @@ bool LabTopBar::init() {
     this->addChildAtPosition(_creationLabLogoSprite, Anchor::Right);
     //_creationLabLogoSprite->setAnchorPoint({0.0, 0.0});
 
+    // buttons
+    NewCreationButton = CCMenuItemSpriteExtra::create(
+        ButtonSprite::create("New"),
+        this,
+        nullptr
+    );
+    NewCreationButton->setID("New Button");
+    NewCreationButton->setPosition({20.0f, 7.5f});
+    NewCreationButton->m_baseScale = 0.45f;
+    NewCreationButton->setScale(0.45f);
+    this->addChild(NewCreationButton);
+
+    OpenCreationButton = CCMenuItemSpriteExtra::create(
+        ButtonSprite::create("Open"),
+        this,
+        nullptr
+    );
+    OpenCreationButton->setID("Open Button");
+    OpenCreationButton->setPosition({58.0f, 7.5f});
+    OpenCreationButton->m_baseScale = 0.45f;
+    OpenCreationButton->setScale(0.45f);
+    this->addChild(OpenCreationButton);
+
+    SaveCreationButton = CCMenuItemSpriteExtra::create(
+        ButtonSprite::create("Save"),
+        this,
+        nullptr
+    );
+    SaveCreationButton->setID("Save Button");
+    SaveCreationButton->setPosition({98.0f, 7.5f});
+    SaveCreationButton->m_baseScale = 0.45f;
+    SaveCreationButton->setScale(0.45f);
+    this->addChild(SaveCreationButton);
+
+    SaveCreationAsButton = CCMenuItemSpriteExtra::create(
+        ButtonSprite::create("Save As.."),
+        this,
+        nullptr
+    );
+    SaveCreationAsButton->setID("Save As Button");
+    SaveCreationAsButton->setPosition({150.0f, 7.5f});
+    SaveCreationAsButton->m_baseScale = 0.45f;
+    SaveCreationAsButton->setScale(0.45f);
+    this->addChild(SaveCreationAsButton);
+
     scheduleUpdate();
 
     return true;
@@ -36,5 +81,5 @@ LabTopBar* LabTopBar::create() {
 void LabTopBar::update(float delta) {
     CCSize screenSize = CCScene::get()->getContentSize();
     this->setContentSize({screenSize.width, 16.0});
-    this->setPosition({screenSize.width / 2, screenSize.height - 8.0f}); // the "it's a float i promise" method
+    this->setPosition({screenSize.width / 2, screenSize.height - 8.0f});
 }

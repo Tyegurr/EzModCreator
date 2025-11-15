@@ -9,6 +9,11 @@ protected:
 
     CCSprite* _backgroundSprite;
     CCSprite* _creationLabLogoSprite;
+
+    CCMenuItemSpriteExtra* NewCreationButton;
+    CCMenuItemSpriteExtra* OpenCreationButton;
+    CCMenuItemSpriteExtra* SaveCreationButton;
+    CCMenuItemSpriteExtra* SaveCreationAsButton;
 public:
     LabTopBar() {}
     static LabTopBar* create();

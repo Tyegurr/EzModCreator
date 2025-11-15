@@ -14,8 +14,11 @@
 	"tags": ["enhancement", "customization", "gameplay"],
 	"resources": {
 		"spritesheets": {
-			"res": ["res/img/*.png"]
-		}
+			"res": ["res/img/forSheets/*.png"]
+		},
+		"sprites": [
+			"res/img/DottedGrid_Dark.png"
+		]
 	},
 	"dependencies": {
 		"geode.node-ids": ">=v1.20.0"

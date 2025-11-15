@@ -1,6 +1,6 @@
 #pragma once
 
-#include "lab/LabTopBar.h"
+#include "lab/labUI.h"
 
 #include <Geode/Geode.hpp>
 using namespace geode::prelude;
@@ -10,6 +10,8 @@ protected:
     bool init() override;
 
     LabTopBar* _labTopBar;
+    BlockSelectorPanel* _blockSelectorPanel;
+    BlockCodeViewport* _blockCodeViewport;
 public:
     ModCreationLabLayer() {}
     static ModCreationLabLayer* create();
