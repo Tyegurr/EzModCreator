@@ -1,4 +1,5 @@
 #include "ModCreationLabLayer.h"
+#include "../EzModCreator.hpp"
 
 bool ModCreationLabLayer::init() {
     if (!CCLayer::init()) return false;
@@ -10,6 +11,9 @@ bool ModCreationLabLayer::init() {
     _blockCodeViewport = BlockCodeViewport::create();
     this->addChild(_blockCodeViewport);
 
+    EzModCreator::get()->setCreationLabLayerCurrent(this);
+    setTouchEnabled(true);
+
     return true;
 }
 
@@ -17,4 +21,15 @@ ModCreationLabLayer* ModCreationLabLayer::create() {
     ModCreationLabLayer* layer = new ModCreationLabLayer();
     layer->init();
     return layer;
+}
+
+bool ModCreationLabLayer::isActivelyPressing() {
+    return _touching;
+}
+bool ModCreationLabLayer::ccTouchBegan(CCTouch* pTouch, CCEvent* pEvent) {
+    _touching = true;
+    return CCLayer::ccTouchBegan(pTouch, pEvent);
+}
+void ModCreationLabLayer::ccTouchEnded(CCTouch* pTouch, CCEvent* pEvent) {
+    _touching = false;
 }

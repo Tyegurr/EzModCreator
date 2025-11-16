@@ -12,7 +12,13 @@ protected:
     LabTopBar* _labTopBar;
     BlockSelectorPanel* _blockSelectorPanel;
     BlockCodeViewport* _blockCodeViewport;
+
+    bool _touching;
 public:
     ModCreationLabLayer() {}
     static ModCreationLabLayer* create();
+
+    bool isActivelyPressing();
+    bool ccTouchBegan(CCTouch* pTouch, CCEvent* pEvent) override;
+    void ccTouchEnded(CCTouch* pTouch, CCEvent* pEvent) override;
 };

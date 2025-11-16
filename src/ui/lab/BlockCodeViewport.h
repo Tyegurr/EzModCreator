@@ -3,15 +3,16 @@
 #include <Geode/Geode.hpp>
 using namespace geode::prelude;
 
-#include "../../math/math.h"
-
 class BlockCodeViewport : public CCMenu {
 protected:
     void updateGeom();
     bool init() override;
 
     CCSprite* _dottedBackground;
-    vec2 _dragPos { 0.0f, 0.0f };
+    CCPoint _dragPos { 0.0f, 0.0f };
+
+    bool _mouseIsInsideMe;
+    bool _changeFrame;
 public:
     BlockCodeViewport() {}
     static BlockCodeViewport* create();

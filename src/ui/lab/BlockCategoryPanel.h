@@ -11,6 +11,11 @@ protected:
 
     CCScale9Sprite* _backgroundSprite;
     BuffedScrollArea* _scrollArea;
+    CCNode* _testNode;
+
+    float _lastDelta;
+    bool _mouseIn;
+    float _timeMouseHasBeenIn;
 public:
     BlockCategoryPanel() {}
     static BlockCategoryPanel* create();
