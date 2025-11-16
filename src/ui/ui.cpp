@@ -8,5 +8,5 @@ bool isPointInsideRect(CCPoint point, CCRect area) {
 }
 bool isMouseInsideRect(CCRect area) {
     cocos2d::CCPoint mousePos = geode::cocos::getMousePos();
-    return (mousePos.x >= area.origin.x && mousePos.x <= (area.origin.x + area.size.width));
+    return (mousePos.x >= area.origin.x && mousePos.x <= (area.origin.x + area.size.width)) && (mousePos.y >= area.origin.y && mousePos.y <= (area.origin.y + area.size.height));
 }

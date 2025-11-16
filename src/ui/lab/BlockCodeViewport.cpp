@@ -4,9 +4,9 @@
 
 void BlockCodeViewport::updateGeom() {
     CCSize screenSize = CCScene::get()->getContentSize();
-    if (EzModCreator::get()->getCreationLabLayer() == nullptr) return;
+    if (EzModCreator::get()->getCreationLabLayer() == nullptr) return; // it's kinda like a failsafe..
 
-    _mouseIsInsideMe = isMouseInsideRect({160.0f, 0.0f, screenSize.width - 160.0f, screenSize.height - 16.0f});
+    _mouseIsInsideMe = isMouseInsideRect({160.0f, 0.0f, screenSize.width - 160.0f, screenSize.height - 17.0f});
 
     if (_mouseIsInsideMe && EzModCreator::get()->getCreationLabLayer()->isActivelyPressing()) {
         _dottedBackground->setColor({0, 255, 0});

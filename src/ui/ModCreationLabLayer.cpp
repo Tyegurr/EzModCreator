@@ -28,7 +28,7 @@ bool ModCreationLabLayer::isActivelyPressing() {
 }
 bool ModCreationLabLayer::ccTouchBegan(CCTouch* pTouch, CCEvent* pEvent) {
     _touching = true;
-    return CCLayer::ccTouchBegan(pTouch, pEvent);
+    return true;
 }
 void ModCreationLabLayer::ccTouchEnded(CCTouch* pTouch, CCEvent* pEvent) {
     _touching = false;
