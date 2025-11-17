@@ -1,4 +1,5 @@
 #include "BlockCategoryButton.h"
+#include "Geode/cocos/label_nodes/CCLabelBMFont.h"
 #include "Geode/cocos/sprite_nodes/CCSprite.h"
 
 bool BlockCategoryButton::init(std::string name, cocos2d::ccColor3B const& color) {
@@ -10,6 +11,10 @@ bool BlockCategoryButton::init(std::string name, cocos2d::ccColor3B const& color
     _spriteIcon->setColor(color);
     _spriteIcon->setScale(1.25f);
     this->addChildAtPosition(_spriteIcon, Anchor::Center);
+
+    _label = CCLabelBMFont::create(name.c_str(), "bigFont.fnt");
+    _label->setScale(0.2525);
+    this->addChildAtPosition(_label, Anchor::Center);
 
     return true;
 }
