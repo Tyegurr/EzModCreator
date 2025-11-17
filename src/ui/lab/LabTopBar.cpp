@@ -7,7 +7,7 @@ bool LabTopBar::init() {
     this->setPositionX(0.0);
 
     _backgroundSprite = CCSprite::createWithSpriteFrameName("PlainWhiteSquare.png"_spr);
-    _backgroundSprite->setID("Background Sprite");
+    _backgroundSprite->setID("background-sprite");
     _backgroundSprite->setScaleX(128.0);
     _backgroundSprite->setScaleY(0.275);
     _backgroundSprite->setColor({ 18, 49, 68 });
@@ -16,7 +16,7 @@ bool LabTopBar::init() {
     _backgroundSprite->updateTransform();
 
     _creationLabLogoSprite = CCSprite::createWithSpriteFrameName("CreationLabLogo.png"_spr);
-    _creationLabLogoSprite->setID("Creation Lab Logo");
+    _creationLabLogoSprite->setID("creation-lab-logo");
     _creationLabLogoSprite->setScale(0.35);
     _creationLabLogoSprite->setAnchorPoint({1.025, 0.5});
     this->addChildAtPosition(_creationLabLogoSprite, Anchor::Right);
@@ -28,7 +28,7 @@ bool LabTopBar::init() {
         this,
         nullptr
     );
-    NewCreationButton->setID("New Button");
+    NewCreationButton->setID("new-button");
     NewCreationButton->setPosition({20.0f, 7.5f});
     NewCreationButton->m_baseScale = 0.45f;
     NewCreationButton->setScale(0.45f);
@@ -39,7 +39,7 @@ bool LabTopBar::init() {
         this,
         nullptr
     );
-    OpenCreationButton->setID("Open Button");
+    OpenCreationButton->setID("open-button");
     OpenCreationButton->setPosition({58.0f, 7.5f});
     OpenCreationButton->m_baseScale = 0.45f;
     OpenCreationButton->setScale(0.45f);
@@ -50,7 +50,7 @@ bool LabTopBar::init() {
         this,
         nullptr
     );
-    SaveCreationButton->setID("Save Button");
+    SaveCreationButton->setID("save-button");
     SaveCreationButton->setPosition({98.0f, 7.5f});
     SaveCreationButton->m_baseScale = 0.45f;
     SaveCreationButton->setScale(0.45f);
@@ -61,7 +61,7 @@ bool LabTopBar::init() {
         this,
         nullptr
     );
-    SaveCreationAsButton->setID("Save As Button");
+    SaveCreationAsButton->setID("save-as-button");
     SaveCreationAsButton->setPosition({150.0f, 7.5f});
     SaveCreationAsButton->m_baseScale = 0.45f;
     SaveCreationAsButton->setScale(0.45f);

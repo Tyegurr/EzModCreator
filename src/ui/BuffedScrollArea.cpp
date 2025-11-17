@@ -12,7 +12,7 @@ bool BuffedScrollArea::init(bool scrollbarVisible) {
     _scrollBarVisible = scrollbarVisible;
 
     _stencil = CCNode::create();
-    _stencil->setID("Clipping Stencil");
+    _stencil->setID("clipping-stencil");
     _stencil->setAnchorPoint({0.0f, 0.0f});
     _stencil->setPosition({0.0f, 0.0f});
     this->addChild(_stencil);

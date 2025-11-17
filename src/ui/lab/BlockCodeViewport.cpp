@@ -27,7 +27,7 @@ bool BlockCodeViewport::init() {
     _dragPos.x = 0.0f;
     _dragPos.y = 0.0f;
 
-    this->setID("Block Code Viewport");
+    this->setID("block-code-viewport");
     this->setZOrder(-2);
     this->setAnchorPoint({1.0f, 0.0f});
 

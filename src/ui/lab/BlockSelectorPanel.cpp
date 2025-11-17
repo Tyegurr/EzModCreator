@@ -10,19 +10,19 @@ bool BlockSelectorPanel::init() {
     if (!CCMenu::init()) return false;
 
     scheduleUpdate();
-    this->setID("Block Selector Panel");
+    this->setID("block-selector-panel");
     this->setAnchorPoint({0.0f, 0.0f});
     this->setPosition({0.0f, 0.0f});
     this->setZOrder(-1);
 
     _background = CCScale9Sprite::createWithSpriteFrameName("PlainWhiteSquare.png"_spr);
-    _background->setID("Background");
+    _background->setID("background");
     _background->setAnchorPoint({0.0f, 0.0f});
     _background->setColor({7, 22, 62});
     this->addChild(_background);
 
     _blockCategoryPanel = BlockCategoryPanel::create();
-    _blockCategoryPanel->setID("Block Category Panel");
+    _blockCategoryPanel->setID("block-category-panel");
     _blockCategoryPanel->setAnchorPoint({0.0f, 0.0f});
     _blockCategoryPanel->setPosition({0.0f, 0.0f});
     this->addChild(_blockCategoryPanel);

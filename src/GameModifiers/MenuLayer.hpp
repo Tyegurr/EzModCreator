@@ -18,7 +18,7 @@ class $modify(ModdedMenuLayer, MenuLayer) {
 
         auto bottomMenu = this->getChildByID("bottom-menu");
         bottomMenu->addChild(ModButton);
-        ModButton->setID("ProgrammableEventsModButton"_spr);
+        ModButton->setID("programmable-events-mod-button");
 
         bottomMenu->updateLayout();
 

@@ -18,18 +18,18 @@ bool BlockCategoryPanel::init() {
     _mouseIn = false;
 
     _testNode = CCNode::create();
-    _testNode->setID("test node");
+    _testNode->setID("test-node");
     this->addChild(_testNode);
 
     this->setContentSize({32.0f, 0.0f});
     _backgroundSprite = CCScale9Sprite::createWithSpriteFrameName("PlainWhiteSquare.png"_spr);
-    _backgroundSprite->setID("Background Sprite");
+    _backgroundSprite->setID("background-sprite");
     _backgroundSprite->setAnchorPoint({0.0f, 0.0f});
     _backgroundSprite->setColor({0, 75, 91});
     this->addChild(_backgroundSprite);
 
     _scrollArea = BuffedScrollArea::create(true);
-    _scrollArea->setID("Scroll Area");
+    _scrollArea->setID("scroll-area");
     _scrollArea->setAnchorPoint({0.0f, 0.0f});
     this->addChild(_scrollArea);
 
