@@ -37,6 +37,7 @@ std::vector<category_metadata> BlockMapper::getAllCategoryMetadata() {
 void BlockMapper::initAllKnownEverything() {
     //? zZZzz.. *SNORE*
     setupCategory_Hooks();
+    setupCategory_Events();
     setupCategory_Logic();
     setupCategory_Math();
 }
