@@ -1,11 +1,14 @@
 #pragma once
 
+#include "Geode/cocos/sprite_nodes/CCSprite.h"
 #include <Geode/Geode.hpp>
 using namespace geode::prelude;
 
-class BlockCategoryButton : public CCNode {
+class BlockCategoryButton : public CCMenu {
 protected:
     bool init(std::string name, cocos2d::ccColor3B const& color);
+
+    CCSprite* _spriteIcon;
 public:
     BlockCategoryButton() {}
     static BlockCategoryButton* create(std::string name, cocos2d::ccColor3B const& color);

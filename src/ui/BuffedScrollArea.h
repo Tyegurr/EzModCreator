@@ -1,20 +1,25 @@
 #pragma once
 
+#include "Geode/cocos/base_nodes/CCNode.h"
+#include "Geode/cocos/sprite_nodes/CCSprite.h"
 #include <Geode/Geode.hpp>
 using namespace geode::prelude;
 
-class BuffedScrollArea : public CCNode {
+class BuffedScrollArea : public CCMenu {
 protected:
     void updateGeom();
     bool init(bool scrollBarVisible);
 
-    CCNode* _stencil;
+    CCLayerColor* _stencil;
     CCClippingNode* _clippingNode;
 
     bool _scrollBarVisible;
+    CCNode* _scrollNodeMain;
 public:
     BuffedScrollArea() {}
     static BuffedScrollArea* create(bool scrollBarVisible);
+
+    CCNode* getMainScrollNode();
 
     void update(float delta);
 };

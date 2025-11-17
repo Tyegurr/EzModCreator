@@ -1,9 +1,13 @@
 #include "ModCreationLabLayer.h"
 #include "../EzModCreator.hpp"
 
+#include "../blocks/BlockMapper.h"
+
 bool ModCreationLabLayer::init() {
     if (!CCLayer::init()) return false;
 
+    BlockMapper::get()->initAllKnownEverything();
+    
     _labTopBar = LabTopBar::create();
     this->addChild(_labTopBar);
     _blockSelectorPanel = BlockSelectorPanel::create();

@@ -1,6 +1,8 @@
 #include "BlockCategoryPanel.h"
-#include "../ui.h"
-#include <cmath>
+#include <vector>
+#include "../../blocks/BlockMapper.h"
+#include "BlockCategoryButton.h"
+#include "Geode/cocos/cocoa/CCGeometry.h"
 
 void BlockCategoryPanel::updateGeom() {
     CCSize sceneSize = CCScene::get()->getContentSize();
@@ -30,11 +32,26 @@ bool BlockCategoryPanel::init() {
 
     _scrollArea = BuffedScrollArea::create(true);
     _scrollArea->setID("scroll-area");
-    _scrollArea->setAnchorPoint({0.0f, 0.0f});
+    _scrollArea->setAnchorPoint({0.0f, 0.0f });
+    _scrollArea->setPosition({0.0f, 0.0f });
     this->addChild(_scrollArea);
+
+    std::vector<category_metadata> allMetadata = BlockMapper::get()->getAllCategoryMetadata();
+    for (category_metadata metadata : allMetadata) {
+        BlockCategoryButton* btn = BlockCategoryButton::create(metadata.name, metadata.color);
+        btn->setPosition({16.0f, 16.0f});
+        _scrollArea->getMainScrollNode()->addChild(btn);
+        CCPoint currentPos = btn->getPosition();
+        btn->setPositionX(16.0f);
+        btn->setPositionY(currentPos.y - 16.0f);
+        //_scrollArea->getMainScrollNode()->updateLayout(false); // this breaks stuff..
+    }
 
     scheduleUpdate();
     updateGeom();
+
+    _scrollArea->getMainScrollNode()->updateLayout();
+    _scrollArea->getMainScrollNode()->updateTransform();
     return true;
 }
 
