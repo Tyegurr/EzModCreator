@@ -37,21 +37,22 @@ bool BlockCategoryPanel::init() {
     this->addChild(_scrollArea);
 
     std::vector<category_metadata> allMetadata = BlockMapper::get()->getAllCategoryMetadata();
+    std::vector<BlockCategoryButton*> catBtnVec;
     for (category_metadata metadata : allMetadata) {
         BlockCategoryButton* btn = BlockCategoryButton::create(metadata.name, metadata.color);
         btn->setPosition({16.0f, 16.0f});
         _scrollArea->getMainScrollNode()->addChild(btn);
+        _scrollArea->getMainScrollNode()->updateLayout();
+        catBtnVec.push_back(btn);
+    }
+    for (BlockCategoryButton* btn : catBtnVec) {
         CCPoint currentPos = btn->getPosition();
         btn->setPositionX(16.0f);
-        btn->setPositionY(currentPos.y - 16.0f);
-        //_scrollArea->getMainScrollNode()->updateLayout(false); // this breaks stuff..
+        btn->setPositionY(currentPos.y - 16.5f);
     }
 
     scheduleUpdate();
     updateGeom();
-
-    _scrollArea->getMainScrollNode()->updateLayout();
-    _scrollArea->getMainScrollNode()->updateTransform();
     return true;
 }
 
