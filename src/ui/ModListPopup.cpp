@@ -17,24 +17,22 @@ void ModListPopup::setupUI() {
 
     // making some awesome ui
     ModListLogo = CCSprite::createWithSpriteFrameName("ModListTitle.png"_spr);
-    ModListLogo->setID("Mod List Logo");
+    ModListLogo->setID("mod-list-logo");
     ModListLogo->setZOrder(3);
     ModListLogo->setScale(0.93);
     m_buttonMenu->addChildAtPosition(ModListLogo, Anchor::Center);
     ModListLogo->setPositionY(200.0);
 
-    ModListBackgroundSprite = CCScale9Sprite::create();
-    ModListBackgroundSprite->initWithFile("GJ_square06.png");
-    ModListBackgroundSprite->setID("Mod List Background Sprite");
+    ModListBackgroundSprite = CCScale9Sprite::create("GJ_square06.png");
+    ModListBackgroundSprite->setID("mod-list-background-sprite");
     ModListBackgroundSprite->setPosition({60.0, 100.0});
     ModListBackgroundSprite->setContentSize({100.0, 180.0});
     ModListBackgroundSprite->setColor({0, 83, 165});
     ModListBackgroundSprite->setZOrder(-1);
     m_buttonMenu->addChild(ModListBackgroundSprite);
 
-    ModInfoBackgroundSprite = CCScale9Sprite::create();
-    ModInfoBackgroundSprite->initWithFile("GJ_square06.png");
-    ModInfoBackgroundSprite->setID("Mod Info Background Sprite");
+    ModInfoBackgroundSprite = CCScale9Sprite::create("GJ_square06.png");
+    ModInfoBackgroundSprite->setID("mod-info-background-sprite");
     ModInfoBackgroundSprite->setContentSize({200.0, 180.0});
     ModInfoBackgroundSprite->setColor({0, 83, 165});
     ModInfoBackgroundSprite->setZOrder(-1);
@@ -47,7 +45,7 @@ void ModListPopup::setupUI() {
         this,
         menu_selector(ModListPopup::onCreateNewModButton)
     );
-    CreateNewModButton->setID("Create New Mod Button");
+    CreateNewModButton->setID("create-new-mod-button");
     m_buttonMenu->addChildAtPosition(CreateNewModButton, Anchor::Center);
     CreateNewModButton->setPosition({356.0, 100.0});
 
