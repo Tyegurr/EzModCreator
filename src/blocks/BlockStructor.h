@@ -1,13 +1,17 @@
 // here we foocking go
 #pragma once
 
+#include "BlockInputs.h"
+#include "BlockOutputs.h"
+
 class BlockStructor {
+protected:
+    BlockStructor() {}
 public:
     std::string name;
     std::string description;
-    //TODO: INPUTS
-    //TODO: OUTPUTS
+    BlockInputs* inputs;
+    BlockOutputs* outputs;
 
-    BlockStructor() {}
     static BlockStructor* create();
 };
