@@ -1,6 +1,9 @@
 #include "BlockMapper.h"
 #include "BlockCategory.hpp"
+#include "categories/class/ClassCategory.h"
 #include "categories/hooks/HooksCategory.h"
+#include "categories/struct/StructCategory.h"
+#include "categories/variables/VariablesCategory.h"
 #include <vector>
 
 BlockMapper* BlockMapper::instancePtr = nullptr;
@@ -40,6 +43,11 @@ void BlockMapper::initAllKnownEverything() {
     setupCategory_Events();
     setupCategory_Logic();
     setupCategory_Math();
+    setupCategory_Variables();
+    setupCategory_Functions();
+    setupCategory_Class();
+    setupCategory_Struct();
+    setupCategory_Enum();
 }
 void BlockMapper::cleanup() {
     //? collect my categories im the blockerman

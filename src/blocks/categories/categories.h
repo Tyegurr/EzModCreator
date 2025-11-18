@@ -2,3 +2,8 @@
 #include "events/EventsCategory.h"
 #include "logic/LogicCategory.h"
 #include "math/MathCategory.h"
+#include "variables/VariablesCategory.h"
+#include "functions/FunctionsCategory.h"
+#include "variables/VariablesCategory.h"
+#include "struct/StructCategory.h"
+#include "enum/EnumCategory.h"
