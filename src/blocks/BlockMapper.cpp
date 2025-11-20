@@ -37,8 +37,8 @@ std::vector<category_metadata> BlockMapper::getAllCategoryMetadata() {
     return _metadataListRaw;
 }
 
+//initAllKnownEverything?? when did i write this wtf
 void BlockMapper::initAllKnownEverything() {
-    //? zZZzz.. *SNORE*
     setupCategory_Hooks();
     setupCategory_Events();
     setupCategory_Logic();
@@ -50,7 +50,7 @@ void BlockMapper::initAllKnownEverything() {
     setupCategory_Enum();
 }
 void BlockMapper::cleanup() {
-    //? collect my categories im the blockerman
+    //? collect my categories
     _categoryListRaw.clear();
     _idToCategory.clear();
 }

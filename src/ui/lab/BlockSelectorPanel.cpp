@@ -1,4 +1,5 @@
 #include "BlockSelectorPanel.h"
+#include <vector>
 
 
 void BlockSelectorPanel::fitToScreen() {
@@ -39,6 +40,12 @@ BlockSelectorPanel* BlockSelectorPanel::create() {
     return menu;
 }
 
+void BlockSelectorPanel::refreshScrollAreaForBlockCategory(const BlockCategory& ref) {
+    // we now need to get all the swatches and make their respective UIs
+    const std::vector<BlockStructor*>& swatches = ref.getAllSwatches();
+    for (BlockStructor* block : swatches) {
+    }
+}
 void BlockSelectorPanel::update(float delta) {
     fitToScreen();
 }
