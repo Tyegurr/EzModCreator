@@ -5,7 +5,7 @@
 bool BlockStructorSwatchUI::init(const cocos2d::CCSize& size) {
     if (!CCMenuItem::init()) return false;
 
-    this->setContentSize(size);
+    this->setContentSize({ size.width, size.height });
 
     return true;
 }
