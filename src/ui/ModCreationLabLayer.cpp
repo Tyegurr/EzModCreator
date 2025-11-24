@@ -16,6 +16,8 @@ bool ModCreationLabLayer::init() {
     this->addChild(_blockCodeViewport);
 
     EzModCreator::get()->setCreationLabLayerCurrent(this);
+
+    _blockSelectorPanel->refreshScrollAreaForBlockCategory(BlockMapper::get()->getBlockCategoryFromId("category_hooks"));
     setTouchEnabled(true);
 
     return true;

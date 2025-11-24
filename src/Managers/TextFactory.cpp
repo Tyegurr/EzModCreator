@@ -13,6 +13,9 @@ void TextFactory::addEntry(std::string name, std::string contents) {
     _rawEntries.push_back(entry);
     _nameToEntry.insert({ name, _rawEntries.back() });
 }
+void TextFactory::addEntryToCurrentInstance(std::string name, std::string contents) {
+    get()->addEntry(name, contents);
+}
 TextFactoryEntry TextFactory::retrieveEntry(std::string name) {
     return _nameToEntry[name];
 }

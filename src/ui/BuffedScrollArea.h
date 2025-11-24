@@ -2,6 +2,7 @@
 
 #include "Geode/cocos/base_nodes/CCNode.h"
 #include "Geode/cocos/sprite_nodes/CCSprite.h"
+#include "Geode/ui/Layout.hpp"
 #include <Geode/Geode.hpp>
 using namespace geode::prelude;
 
@@ -12,6 +13,7 @@ protected:
 
     CCLayerColor* _stencil;
     CCClippingNode* _clippingNode;
+    ColumnLayout* _scrollLayout;
 
     bool _scrollBarVisible;
     CCNode* _scrollNodeMain;

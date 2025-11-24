@@ -56,8 +56,8 @@ void ModListPopup::setupUI() {
 
 // button callbacks
 void ModListPopup::onCreateNewModButton(CCObject* sender) {
-    if (transitioningToCreationLab == true) return;
-    transitioningToCreationLab = true;
+    //if (transitioningToCreationLab == true) return;
+    //transitioningToCreationLab = true;
     log::info("starting transition to mod creation lab");
 
     CCScene* newScene = CCScene::create();

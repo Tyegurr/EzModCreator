@@ -11,6 +11,7 @@ protected:
     bool init() override;
 
     CCSprite* _dottedBackground;
+    CCNode* _blockAnchorPoint;
     CCPoint _camPos { 0.0f, 0.0f };
     CCPoint _camPosOnTouchFrame { 0.0f, 0.0f };
     CCPoint _mousePosOnTouchFrame { 0.0f, 0.0f };

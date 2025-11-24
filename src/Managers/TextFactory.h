@@ -21,5 +21,6 @@ public:
     static TextFactory* get();
 
     void addEntry(std::string name, std::string contents);
+    static void addEntryToCurrentInstance(std::string name, std::string contents);
     TextFactoryEntry retrieveEntry(std::string name);
 };

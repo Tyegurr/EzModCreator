@@ -28,9 +28,9 @@ BlockCategory* BlockMapper::createNewCategoryFromInstance(BlockCategory* instanc
     _metadataListRaw.push_back({instance->id, instance->categoryColor, instance->categoryName});
     return _categoryListRaw.back();
 }
-BlockCategory* BlockMapper::getBlockCategoryFromId(std::string id) {
-    if (_idToCategory.contains(id)) return _idToCategory[id];
-    return nullptr;
+const BlockCategory& BlockMapper::getBlockCategoryFromId(std::string id) const {
+    if (_idToCategory.contains(id)) return *_idToCategory.at(id);
+    return *new BlockCategory("unknown", {255, 255, 255}, "unknown block");
 }
 
 std::vector<category_metadata> BlockMapper::getAllCategoryMetadata() {

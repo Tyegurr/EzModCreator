@@ -27,6 +27,7 @@ class $modify(ModdedMenuLayer, MenuLayer) {
     
     void onModButton(CCObject* sender)
     {
+        log::info("hey look im on mod button");
         EzModCreator::get()->OpenModListLayer();
     }
 }; // ok but how do i detect if it's about to be destroyed or we're leaving the menu..

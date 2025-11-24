@@ -1,5 +1,6 @@
 #include "BuffedScrollArea.h"
 #include "Geode/cocos/base_nodes/CCNode.h"
+#include "Geode/ui/Layout.hpp"
 #include "Geode/ui/SimpleAxisLayout.hpp"
 
 void BuffedScrollArea::updateGeom() {
@@ -25,13 +26,14 @@ bool BuffedScrollArea::init(bool scrollbarVisible) {
     _clippingNode->setID("scroll-clipping-node");
     this->addChild(_clippingNode);
 
-    SimpleAxisLayout* axisLayout = SimpleAxisLayout::create(Axis::Column);
-    axisLayout->setMainAxisAlignment(MainAxisAlignment::Start);
-    axisLayout->setCrossAxisAlignment(CrossAxisAlignment::Center);
-    axisLayout->setMainAxisDirection(AxisDirection::TopToBottom);
+    _scrollLayout = ColumnLayout::create();
+    _scrollLayout->setAxisAlignment(AxisAlignment::End);
+    _scrollLayout->setAutoScale(false);
+    _scrollLayout->setGap(0.0f);
+    _scrollLayout->setAxisReverse(true);
 
     _scrollNodeMain = CCNode::create();
-    _scrollNodeMain->setLayout(axisLayout);
+    _scrollNodeMain->setLayout(_scrollLayout);
     _scrollNodeMain->setID("scroll-node-main");
     _clippingNode->addChildAtPosition(_scrollNodeMain, Anchor::Top);
 

@@ -1,10 +1,12 @@
 #include "BlockSelectorPanel.h"
+#include "BlockStructorSwatchUI.h"
 #include <vector>
 
 
 void BlockSelectorPanel::fitToScreen() {
     CCSize sceneSize = CCScene::get()->getContentSize();
     this->setContentSize({160.0f, sceneSize.height - 16.0f});
+    _scrollArea->setContentSize({128.0f, sceneSize.height - 16.5f});
     _background->setContentSize(this->getContentSize());
 }
 bool BlockSelectorPanel::init() {
@@ -28,6 +30,11 @@ bool BlockSelectorPanel::init() {
     _blockCategoryPanel->setPosition({0.0f, 0.0f});
     this->addChild(_blockCategoryPanel);
 
+    _scrollArea = BuffedScrollArea::create(false);
+    _scrollArea->setPositionX(32.0f);
+    _scrollArea->setPositionY(0.0f);
+    this->addChild(_scrollArea);
+
     // fitting stuff to screen geom.
     fitToScreen();
 
@@ -44,6 +51,9 @@ void BlockSelectorPanel::refreshScrollAreaForBlockCategory(const BlockCategory& 
     // we now need to get all the swatches and make their respective UIs
     const std::vector<BlockStructor*>& swatches = ref.getAllSwatches();
     for (BlockStructor* block : swatches) {
+        BlockStructorSwatchUI* swatch = BlockStructorSwatchUI::create({120, 42}, block);
+        _scrollArea->getMainScrollNode()->addChild(swatch);
+        _scrollArea->getMainScrollNode()->updateLayout();
     }
 }
 void BlockSelectorPanel::update(float delta) {

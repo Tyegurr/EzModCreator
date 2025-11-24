@@ -1,4 +1,5 @@
 #pragma once
+#include "BlockOutputs.h"
 #include <vector>
 
 class SingularBlockInput {
@@ -13,5 +14,5 @@ public:
     BlockInputs() {}
 
     const std::vector<SingularBlockInput*>& getAllInputs();
-    SingularBlockInput* getInputOfIndex(int idx);
+    const SingularBlockInput& getInputOfIndex(int idx);
 };

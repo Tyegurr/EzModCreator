@@ -29,7 +29,7 @@ public:
     /// Creates a new block category from an instance of a BlockCategory class.
     BlockCategory* createNewCategoryFromInstance(BlockCategory* instance);
     /// Gets a block category from it's respective id.
-    BlockCategory* getBlockCategoryFromId(std::string id);
+    const BlockCategory& getBlockCategoryFromId(std::string id) const;
 
     ///  Gets metadata for each category in a vector
     std::vector<category_metadata> getAllCategoryMetadata();
