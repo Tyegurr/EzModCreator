@@ -7,7 +7,7 @@
 bool BlockStructorSwatchUI::init(const cocos2d::CCSize& size) {
     if (!CCMenuItem::init()) return false;
 
-    this->setContentSize({ size.width, size.height });
+    this->setContentSize({ size.width, size.height + (_swatchRef->getNumberOfOutputs() * 16) });
 
     _swatchBackgroundSprite = CCScale9Sprite::create("GJ_square06.png");
     _swatchBackgroundSprite->setContentSize(this->getContentSize());
