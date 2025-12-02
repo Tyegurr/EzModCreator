@@ -7,7 +7,10 @@
 /// A class storing block data.
 class BlockStructor {
 protected:
-    BlockStructor() {}
+    BlockStructor() {
+        inputs = new BlockInputs();
+        outputs = new BlockOutputs();
+    }
 public:
     /// The color of the block.
     cocos2d::ccColor3B blockColor {255, 255, 255};
@@ -33,4 +36,6 @@ public:
     BlockStructor* duplicate();
     BlockStructor* copy();
     void runActionSingle();
+    int getNumberOfOutputs();
+    int getNumberOfInputs();
 };

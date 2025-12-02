@@ -13,7 +13,7 @@ enum Platform {
 class HookBlockStructor : public BlockStructor {
 protected:
     std::vector<Platform> _availablePlatforms;
-    HookBlockStructor() {}
+    HookBlockStructor() : BlockStructor() {}
 public:
     const std::vector<Platform>& getAvailablePlatforms();
 };

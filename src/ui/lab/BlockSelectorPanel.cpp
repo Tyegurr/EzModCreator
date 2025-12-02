@@ -1,5 +1,7 @@
 #include "BlockSelectorPanel.h"
 #include "BlockStructorSwatchUI.h"
+#include "Geode/ui/Layout.hpp"
+#include "Geode/ui/ScrollLayer.hpp"
 #include <vector>
 
 
@@ -34,6 +36,15 @@ bool BlockSelectorPanel::init() {
     _scrollArea->setPositionX(32.0f);
     _scrollArea->setPositionY(0.0f);
     this->addChild(_scrollArea);
+    _scrollArea->setVisible(false);
+    _scrollArea->getMainScrollNode()->updateLayout(false);
+
+    _mainScrollLayer = ScrollLayer::create({32.0f, 0.0f, 128.0f, 320.0f});
+    ColumnLayout* lay = ColumnLayout::create();
+    // axis alignment should be at end
+    //lay->setAxisAlignment(AxisAlignment::End);
+    _mainScrollLayer->m_contentLayer->setLayout(lay);
+    this->addChild(_mainScrollLayer);
 
     // fitting stuff to screen geom.
     fitToScreen();
@@ -52,9 +63,10 @@ void BlockSelectorPanel::refreshScrollAreaForBlockCategory(const BlockCategory& 
     const std::vector<BlockStructor*>& swatches = ref.getAllSwatches();
     for (BlockStructor* block : swatches) {
         BlockStructorSwatchUI* swatch = BlockStructorSwatchUI::create({120, 42}, block);
-        _scrollArea->getMainScrollNode()->addChild(swatch);
-        _scrollArea->getMainScrollNode()->updateLayout();
+        _mainScrollLayer->m_contentLayer->addChild(swatch);
     }
+    _mainScrollLayer->m_contentLayer->updateLayout();
+    //_scrollArea->getMainScrollNode()->updateLayout();
 }
 void BlockSelectorPanel::update(float delta) {
     fitToScreen();

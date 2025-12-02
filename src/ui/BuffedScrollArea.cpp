@@ -36,6 +36,7 @@ bool BuffedScrollArea::init(bool scrollbarVisible) {
     _scrollNodeMain->setLayout(_scrollLayout);
     _scrollNodeMain->setID("scroll-node-main");
     _clippingNode->addChildAtPosition(_scrollNodeMain, Anchor::Top);
+    _scrollNodeMain->updateLayout();
 
     scheduleUpdate();
     updateGeom();

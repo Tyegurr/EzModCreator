@@ -15,6 +15,6 @@ const SingularBlockOutput& BlockOutputs::getOutputOfIndex(int idx) {
 // STARRY HOPES UP IN THE SKY!
 
 // address me
-void BlockOutputs::addOutput(std::string name, std::string description, bool isMethod, bool isStaticMethod, std::vector<BlockParameter> parameters) {
+void BlockOutputs::addOutput(std::string name, std::string description, bool isMethod, bool isStaticMethod, std::vector<std::shared_ptr<BlockParameter>> parameters) {
     _rawListData.push_back(std::make_shared<SingularBlockOutput>(name, description, isMethod, isStaticMethod, parameters));
 }
